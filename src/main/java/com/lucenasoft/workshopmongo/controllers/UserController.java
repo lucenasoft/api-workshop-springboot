@@ -1,6 +1,8 @@
 package com.lucenasoft.workshopmongo.controllers;
 
 import com.lucenasoft.workshopmongo.models.UserModel;
+import com.lucenasoft.workshopmongo.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +15,12 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api")
 public class UserController {
+
+    @Autowired
+    private UserService userService;
     @GetMapping("/users")
     public ResponseEntity<List<UserModel>> findAll() {
-        UserModel gabriel = new UserModel("1","Gabriel Lucena","Gabriel@gmail.com");
-        UserModel maria = new UserModel("2","Maria Lucena","Maria@gmail.com");
-        List<UserModel> users = new ArrayList<>(Arrays.asList(gabriel, maria));
+        List<UserModel> users = userService.findAll();
         return ResponseEntity.ok().body(users);
     }
 }
