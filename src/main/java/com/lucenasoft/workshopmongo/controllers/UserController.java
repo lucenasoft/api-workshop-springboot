@@ -35,8 +35,14 @@ public class UserController {
     public ResponseEntity<Void> insert(@RequestBody UserDTO objDto) {
         UserModel obj = userService.fromDTO(objDto);
         obj = userService.insert(obj);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(obj.getId()).toUri();//Boa pratica
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(obj.getId()).toUri(); //Boa pratica
         return ResponseEntity.created(uri).build(); //created return 201 -< code http
+    }
+
+    @DeleteMapping("/user/{id}")
+    public ResponseEntity<Void> delete(@PathVariable String id){
+        userService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
