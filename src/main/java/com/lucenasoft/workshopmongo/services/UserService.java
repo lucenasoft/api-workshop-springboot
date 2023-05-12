@@ -1,5 +1,6 @@
 package com.lucenasoft.workshopmongo.services;
 
+import com.lucenasoft.workshopmongo.dto.UserDTO;
 import com.lucenasoft.workshopmongo.models.UserModel;
 import com.lucenasoft.workshopmongo.repositories.UserRepository;
 import com.lucenasoft.workshopmongo.services.exception.ObjectNotFoundException;
@@ -23,4 +24,13 @@ public class UserService {
         Optional<UserModel> user = userRepository.findById(id);
         return user.orElseThrow(() -> new ObjectNotFoundException("User not found: " + id));
     }
+
+    public UserModel insert(UserModel obj) {
+        return userRepository.insert(obj);
+    }
+
+    public UserModel fromDTO(UserDTO dto) {
+        return new UserModel(dto.getId(), dto.getName(), dto.getEmail());
+    }
+
 }
