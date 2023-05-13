@@ -45,4 +45,12 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping("/user/{id}")
+    public ResponseEntity<Void> update(@PathVariable String id ,@RequestBody UserDTO objDto) {
+        UserModel obj = userService.fromDTO(objDto);
+        obj.setId(id);
+        obj = userService.update(obj);
+        return ResponseEntity.noContent().build();
+    }
+
 }
