@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-@Document(collection = "user")
+@Document(collection = "user") // Usado para mapear a collection no mongoDB
 public class UserModel implements Serializable {
 
     @Id
