@@ -16,7 +16,6 @@ import java.util.List;
 @EqualsAndHashCode(of = "id")
 @Document(collection = "user") // Usado para mapear a collection no mongoDB
 public class UserModel implements Serializable {
-
     @Id
     private String id;
     private String name;

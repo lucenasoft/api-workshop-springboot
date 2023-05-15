@@ -11,7 +11,6 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 public class AuthorDTO implements Serializable {
-
     private String id;
     private String name;
 

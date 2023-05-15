@@ -12,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class UserService {
-
     @Autowired
     private UserRepository userRepository;
 
@@ -48,5 +47,4 @@ public class UserService {
     public UserModel fromDTO(UserDTO dto) {
         return new UserModel(dto.getId(), dto.getName(), dto.getEmail());
     }
-
 }

@@ -16,7 +16,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping(value = "/api")
 public class UserController {
-
     @Autowired
     private UserService userService;
     @GetMapping("/users")
@@ -59,5 +58,4 @@ public class UserController {
         obj = userService.update(obj);
         return ResponseEntity.noContent().build();
     }
-
 }

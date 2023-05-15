@@ -11,7 +11,6 @@ import java.util.Optional;
 
 @Service
 public class PostService {
-
     @Autowired
     private PostRepository postRepository;
 
@@ -19,5 +18,4 @@ public class PostService {
         Optional<PostModel> user = postRepository.findById(id);
         return user.orElseThrow(() -> new ObjectNotFoundException("Post not found: " + id));
     }
-
 }

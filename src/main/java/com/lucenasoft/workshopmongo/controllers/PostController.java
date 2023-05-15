@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/api")
 public class PostController {
-
     @Autowired
     private PostService postService;
 
@@ -23,5 +22,4 @@ public class PostController {
         PostModel obj = postService.findById(id);
         return ResponseEntity.ok().body(obj);
     }
-
 }
