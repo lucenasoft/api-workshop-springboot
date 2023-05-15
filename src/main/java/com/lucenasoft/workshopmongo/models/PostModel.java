@@ -1,5 +1,6 @@
 package com.lucenasoft.workshopmongo.models;
 
+import com.lucenasoft.workshopmongo.dto.AuthorDTO;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,6 +19,6 @@ public class PostModel implements Serializable {
     private Date date;
     private String title;
     private String body;
-    private UserModel author;
+    private AuthorDTO author;
 
 }
