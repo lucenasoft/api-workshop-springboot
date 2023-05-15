@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.List;
 import java.util.TimeZone;
 
 @Configuration
@@ -41,5 +42,9 @@ public class TestConfig implements CommandLineRunner {
         PostModel post2 = new PostModel(null,sdf.parse("15/05/2002"),"Uhuu nasci","Hoje eu vim ao mundo!",new AuthorDTO(u2));
 
         postRepository.saveAll(Arrays.asList(post1,post2));
+        u1.getPosts().add(post1);
+        u2.getPosts().add(post2);
+        userRepository.save(u1);
+        userRepository.save(u2);
     }
 }
