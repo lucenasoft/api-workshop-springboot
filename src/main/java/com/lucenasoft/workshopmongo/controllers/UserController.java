@@ -1,6 +1,7 @@
 package com.lucenasoft.workshopmongo.controllers;
 
 import com.lucenasoft.workshopmongo.dto.UserDTO;
+import com.lucenasoft.workshopmongo.models.PostModel;
 import com.lucenasoft.workshopmongo.models.UserModel;
 import com.lucenasoft.workshopmongo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,12 @@ public class UserController {
     public ResponseEntity<UserDTO> findById(@PathVariable String id) {
         UserModel obj = userService.findById(id);
         return ResponseEntity.ok().body(new UserDTO(obj));
+    }
+
+    @GetMapping("/user/{id}/posts")
+    public ResponseEntity<List<PostModel>> findPosts(@PathVariable String id) {
+        UserModel obj = userService.findById(id);
+        return ResponseEntity.ok().body(obj.getPosts());
     }
 
     @PostMapping("/user")
