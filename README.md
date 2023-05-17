@@ -6,9 +6,6 @@ Esta API é projetada para gerenciar o cadastro de usuários, posts e comentári
 
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Endpoints](#endpoints)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
-- [Contato](#contato)
 
 ## Tecnologias Utilizadas
 
