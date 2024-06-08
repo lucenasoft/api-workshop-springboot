@@ -1,4 +1,4 @@
-# Nome do Projeto
+# Workshop
 
 Esta API é projetada para gerenciar o cadastro de usuários, posts e comentários em um sistema. Ela fornece endpoints que permitem realizar operações como criar, recuperar, atualizar e excluir usuários, posts e comentários.
 
